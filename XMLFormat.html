@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>XML Format-er</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+body {
+	margin-top: 5%;
+}
+</style>
+</head>
+
+<body>
+	<div id="content" class="container"> 
+		<div class="row">
+			<div class="col-md-12">
+				<legend>XML Formatter</legend>
+				<fieldset class="form-group">
+					<textarea class="form-control" id="ta" rows="12"></textarea>
+				</fieldset>
+				<fieldset class="form-group">
+					<input class="btn btn-success" type="button" onclick="beautify()" value="Pretty Print">
+					<input class="btn btn-primary" type="button" onclick="minify()" value="Minify">
+				</fieldset>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				If your XML does not come out looking the way you believe it should, likely it is incorrectly written. Please look over where there error may be, make the correction, and try again.
+			</div>
+		</div>
+		
+		<div class="row"><div class="col-md-12"></div></div>
+		
+		<div class="row">
+			<div class="col-md-12 center-block text-center" style="margin-top: 50px;">
+				<a href="mailto:bgerhards@cds-global.com">Brian Gerhards</a> | <a href="https://github.com/vkiryukhin/vkBeautify">vkBeautify</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/vkbeautify.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/xmlFormatter.js"></script>
+</body>
+</html>
