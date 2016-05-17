@@ -1,46 +1,92 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>XML Format-er</title>
+	<head>
+		<title>XML Format-er</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+		body {
+			margin-top: 5%;
+		}
+		.row {
+			margin-top: 10px;
+		}
+		#editor {
+		min-height: 300px;
+		}
+		.regexIndicator {
+			display: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<legend>XML Formatter</legend>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label>Find All</label>
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">
+							Occurrences:
+							<span id="findAllCount"></span>&nbsp;&nbsp;&nbsp;
+							<span class="regexIndicator"><strong>/</strong></span>
+						</span>
+						<input type="text" id="findAllCriteria" class="form-control input-lg" aria-label="Search For All Occurrences" placeholder="<book.*?>">
+						<span class="input-group-addon">
+							<span class="regexIndicator"><strong>/</strong></span>
+							&nbsp;&nbsp;&nbsp;
+							<label id="regexFindAllLbl" class="checkbox-inline"><input type="checkbox" id="regexFindAllRegExp" value="">RegEX</label>
+							<label id="regexFindAllLbl" class="checkbox-inline"><input type="checkbox" id="regexFindAllCase" value="">Case</label>
+							<input class="btn btn-sm btn-primary" type="button" onclick="findAlloccurrences()" value="Search">
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div id="editor"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<fieldset class="form-group">
+						<input class="btn btn-success btn-sm" type="button" onclick="beautify()" value="Beautify">
+						<input class="btn btn-primary  btn-sm" type="button" onclick="minify()" value="Minify">
+					</fieldset>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					If your XML does not come out looking the way you believe it should, likely it is incorrectly written. Please look over where there error may be, make the correction, and try again.
+				</div>
+			</div>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<style>
-body {
-	margin-top: 5%;
-}
-</style>
-</head>
-
-<body>
-	<div id="content" class="container"> 
-		<div class="row">
-			<div class="col-md-12">
-				<legend>XML Formatter</legend>
-				<fieldset class="form-group">
-					<textarea class="form-control" id="ta" rows="12"></textarea>
-				</fieldset>
-				<fieldset class="form-group">
-					<input class="btn btn-success" type="button" onclick="beautify()" value="Pretty Print">
-					<input class="btn btn-primary" type="button" onclick="minify()" value="Minify">
-				</fieldset>
+			<div class="row">
+				<div class="col-md-3">Load Sample XML</div>
+				<div class="col-md-9">
+					<ul><a onclick="loadSample(1)">XML Sample 1</a></ul>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12 center-block text-center" style="margin-top: 50px;">
+					<a href="mailto:bgerhards@cds-global.com">Brian Gerhards</a> | <a href="https://github.com/vkiryukhin/vkBeautify">vkBeautify</a>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				If your XML does not come out looking the way you believe it should, likely it is incorrectly written. Please look over where there error may be, make the correction, and try again.
-			</div>
-		</div>
-		
-		<div class="row"><div class="col-md-12"></div></div>
-		
-		<div class="row">
-			<div class="col-md-12 center-block text-center" style="margin-top: 50px;">
-				<a href="mailto:bgerhards@cds-global.com">Brian Gerhards</a> | <a href="https://github.com/vkiryukhin/vkBeautify">vkBeautify</a>
-			</div>
-		</div>
-	</div>
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/vkbeautify.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/xmlFormatter.js"></script>
-</body>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/vkbeautify.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/xmlFormatter.js"></script>
+		<script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+	</body>
 </html>
